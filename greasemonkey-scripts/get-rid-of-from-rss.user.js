@@ -12,7 +12,7 @@
 // License is X11 License:
 // http://www.opensource.org/licenses/mit-license.php
 
-var loc = window.location;
+var loc = window.location.href;
 var new_loc = loc.replace(/[&?]from=rss$/, "");
 if (new_loc != loc)
 {
