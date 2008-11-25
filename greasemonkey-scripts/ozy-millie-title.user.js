@@ -170,12 +170,13 @@ function letsJQuery()
 
     var date_wo_day_of_week = mydate.replace(/^.*?day, /, "");
 
-    var timestamp = Date.parse(date_wo_day_of_week);
+    var timestamp = new Date(date_wo_day_of_week);
 
-    var formatted_date = timestamp.format("%d-%m-%Y");
+    var formatted_date = timestamp.format("dd-mm-yyyy");
+
 
     var total_text = "=== [" + loc + " " + formatted_date + " - " + title + "] ===";
 
-    $("center > h3").after("<input name=\"mw_title\" id=\"mw_title\" value=\" . myesc(total_text) . "\">\n"); 
+    $("center > h3").after("<b>MediaWiki Title:</b> <input name=\"mw_title\" id=\"mw_title\" value=\"" + myesc(total_text) + "\">\n<br>\n<br>\n<br>\n"); 
 }
 
