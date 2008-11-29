@@ -165,6 +165,7 @@ function letsJQuery()
     var loc = window.location.href;
 
     var title = $("title").text();
+    title = title.replace(/^Ozy and Millie: /, "");
 
     var mydate = $("center > h3").text();
 
