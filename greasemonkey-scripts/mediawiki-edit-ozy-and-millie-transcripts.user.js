@@ -43,6 +43,25 @@ function autocomplete_box_on_press(e)
     setTimeout(autocomplete_box, 10);
 }
 
+var ids_to_fullnames =
+{
+    "Av" : "Avery",
+    "Dr" : "Dr. I. Wahnsinnig",
+    "Fe" : "Felicia",
+    "Is" : "Isolde",
+    "Je" : "Jeremy",
+    "La" : "Mr. Larnblatt",
+    "Ll" : "Llewellyn",
+    "Lo" : "Pirate Captain Locke",
+    "Mi" : "Millie",
+    "Ms" : "Ms. Mudd",
+    "Oz" : "Ozy",
+    "Pr" : "Principal Beau Vine",
+    "So" : "Ms. Srkowitz",
+    "St" : "Stephan",
+    "Ti" : "Timulty",
+};
+
 function autocomplete_box(not1, not2)
 {
     var range = $("#wpTextbox1").getSelection();
@@ -55,7 +74,7 @@ function autocomplete_box(not1, not2)
     }
 
     var line_end = range.end;
-    var line_start = line_end;
+    var line_start = line_end-1;
 
     while ((line_start >= 0) && (elem.value.substring(line_start,line_start+1) != "\n"))
     {
@@ -65,9 +84,16 @@ function autocomplete_box(not1, not2)
 
     var line = elem.value.substring(line_start, line_end);
 
-    if (line == "*Oz")
+    var matches;
+    if (matches = /^(\*\*?) *([A-Z][a-z])$/.exec(line))
     {
-        elem.value = elem.value.substring(0, line_start) + "* '''Ozy''':" + elem.value.substring(line_end);
+        var bullets = matches[1];
+        var id = matches[2];
+
+        if (ids_to_fullnames[id])
+        {
+            elem.value = elem.value.substring(0, line_start) + bullets + " " + "'''" + ids_to_fullnames[id] + "''': " + elem.value.substring(line_end);
+        }       
     }
 
     return;
