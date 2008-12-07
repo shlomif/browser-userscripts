@@ -39,7 +39,6 @@ var timeout;
 
 function autocomplete_box_on_press(e)
 {
-    alert("foo");
     clearTimeout(timeout);
     setTimeout(autocomplete_box, 10);
 }
@@ -66,7 +65,6 @@ function autocomplete_box(not1, not2)
 
     var line = elem.value.substring(line_start, line_end);
 
-    alert("Line == " + line);
     if (line == "*Oz")
     {
         elem.value = elem.value.substring(0, line_start) + "* '''Ozy''':" + elem.value.substring(line_end);
@@ -164,7 +162,7 @@ function letsJQuery()
 })();
 
 
-    $("#wpTextbox1").keypress(autocomplete_box);
+    $("#wpTextbox1").keypress(autocomplete_box_on_press);
 
 }
 
