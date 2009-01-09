@@ -57,7 +57,7 @@ var ids_to_fullnames =
     "Ms" : "Ms. Mudd",
     "Oz" : "Ozy",
     "Pr" : "Principal Beau Vine",
-    "So" : "Ms. Srkowitz",
+    "So" : "Ms. Sorkowitz",
     "St" : "Stephan",
     "Ti" : "Timulty",
 };
