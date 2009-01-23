@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         get-rid-of-from-rss
-// @version      0.0.1
+// @version      0.0.2
 // @description  get rid of the &from=rss GET parameters in URLs.
 // @author       Shlomi Fish ( http://www.shlomifish.org/ )
 // @include      http://use.perl.org/*
