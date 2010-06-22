@@ -13,7 +13,7 @@
 // http://www.opensource.org/licenses/mit-license.php
 
 var loc = window.location.href;
-var new_loc = loc.replace(/[&?]from=rss$/, "").replace(/%2F/gi, "/");
+var new_loc = loc.replace(/[&?]from=rss.*$/, "").replace(/%2F/gi, "/");
 if (new_loc != loc)
 {
     window.location = new_loc;
