@@ -30,7 +30,7 @@ function GM_wait() {
 GM_wait();
 
 function get_layout() {
-    var loc = window.location.jref;
+    var loc = window.location.href;
     var arr = /size=([0-9]+)/.exec(loc);
     var size = parseInt(arr[1]);
 
