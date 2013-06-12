@@ -51,7 +51,7 @@ function get_layout() {
     }
 
     var new_id = "shlomif_contents_text";
-    $("body").append("<textarea id=\"" + new_id + " cols='" + size + "' rows='" + size + "'></textarea>");
+    $("body").append("<textarea style=\"left:0;clear:both;display:block;color:black;visibility:visible;font-family:monospace;\" id='" + new_id + "' cols='" + size + "' rows='" + size + "'></textarea>");
 
     $("#" + new_id).val(buffer);
 
