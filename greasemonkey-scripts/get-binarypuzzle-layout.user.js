@@ -36,9 +36,9 @@ function get_layout() {
 
     var buffer = '';
 
-    for (var y=1;y<size;y++) {
+    for (var y=1 ; y <= size ; y++) {
         buffer += '|'
-        for (var x = 1 ; x < size ; x++) {
+        for (var x = 1 ; x <= size ; x++) {
             var text = $("p#celpar_" + y + "_" + x + "").html();
             var digit = /([01])/.exec(text);
             if (! digit) {
@@ -51,7 +51,7 @@ function get_layout() {
     }
 
     var new_id = "shlomif_contents_text";
-    $("body").append("<textarea style=\"left:0;clear:both;display:block;color:black;visibility:visible;font-family:monospace;\" id='" + new_id + "' cols='" + size + "' rows='" + size + "'></textarea>");
+    $("body").append("<textarea readonly=\"readonly\" style=\"left:0;clear:both;display:block;color:black;visibility:visible;font-family:monospace;\" id='" + new_id + "' cols='" + size + "' rows='" + size + "'></textarea>");
 
     $("#" + new_id).val(buffer);
 
