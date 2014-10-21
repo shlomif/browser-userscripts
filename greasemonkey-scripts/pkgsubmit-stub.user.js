@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name       Add pkgsubmit
+// @name         Add pkgsubmit
 // @description  Add pkgsubmit.user.js
-// @match      http://pkgsubmit.mageia.org/*
+// @include      http://pkgsubmit.mageia.org/*
 // ==/UserScript==
 
 (function () {
