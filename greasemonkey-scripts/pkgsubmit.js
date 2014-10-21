@@ -166,6 +166,14 @@ function safe_tags_regex(str) {
     return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
+function prepare_pkg_list (data) {
+    var reg = /\nWrote:[^\n]+\.rpm\n/.exec(data);
+
+    return safe_tags_regex(reg.map(function (s) {
+        s.replace(/^\n?Wrote:\s*/, '').replace(/\.rpm\n?$/, '')
+            }).join("\n"));
+}
+
 /**
  * If href is a log file, load it and display it in a decorated box
  * plus controls to close/navigate it.
@@ -232,6 +240,11 @@ function show_log_file(ev) {
                                 class: "stats",
                                 html: events_log.report()
                             })
+                        )
+                        .append($("<pre />", {
+                                class: "advisory_changed_packages",
+                                html: (prepare_pkg_list(data)),
+                        }
                         )
                     )
                     .animate({ scrollTop: $("#" + elId).prop("scrollHeight") }, 1000);
