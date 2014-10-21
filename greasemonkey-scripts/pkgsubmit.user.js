@@ -1,3 +1,12 @@
+// ==UserScript==
+// @name         pkgsubmit-mageia
+// @version      0.0.1
+// @description  Adds a changed packages list to pkgsubmit.js
+// @author       Shlomi Fish ( http://www.shlomifish.org/ )
+// @include      http://pkgsubmit.mageia.org/*
+// ==/UserScript==
+// ===============================================================
+
 /**
  * Mageia build-system quick status report script.
  * Javascript utilities.
