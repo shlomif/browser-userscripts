@@ -13,7 +13,7 @@
 
 unsafeWindow.onscroll = null;
 
-unsafeWindow.addEventListener( "load", function () {         
+unsafeWindow.addEventListener( "load", function () {
     unsafeWindow.onscroll = null;
     }
-); 
+);
