@@ -18,6 +18,10 @@ letsJQuery();
 // All your GM code must be inside this function
 function letsJQuery() {
     $(document).keydown(function(e) {
+        if (e.ctrlKey || e.altKey || e.metaKey) {
+            return;
+        }
+
         let href = undefined;
         switch (e.which) {
             case 37: // left
