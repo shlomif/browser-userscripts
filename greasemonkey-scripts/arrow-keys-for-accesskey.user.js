@@ -25,11 +25,17 @@ function letsJQuery() {
         let href = undefined;
         switch (e.which) {
             case 37: // left
-                href = $("link[rel=\"prev\"]").attr("href");
+                href = $("a[accesskey=\"p\"]").attr("href");
+                if (! href) {
+                    href = $("link[rel=\"prev\"]").attr("href");
+                }
                 // $("link[accesskey=\"p\"]").attr("href");
                 break;
             case 39: // right
-                href = $("link[rel=\"next\"]").attr("href");
+                href = $("a[accesskey=\"n\"]").attr("href");
+                if (! href) {
+                    href = $("link[rel=\"next\"]").attr("href");
+                }
                 // $("link[accesskey=\"n\"]").attr("href");
                 break;
             default:
