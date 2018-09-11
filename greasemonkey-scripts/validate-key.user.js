@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         arrow-keys-for-accesskeys
+// @name         validate-key
 // @version      0.0.1
 // @description  provide self links for headers (h1, h2, etc.) with id=""'s.
 // @author       Shlomi Fish ( http://www.shlomifish.org/ )
@@ -26,9 +26,9 @@ function letsJQuery() {
             case "v":
             case "V":
                 window.open('http://validator.w3.org/check?uri='+encodeURIComponent(window.location));
+                e.preventDefault();
                 return;
         }
-        e.preventDefault();
     }
     );
 }
