@@ -23,21 +23,25 @@ function letsJQuery() {
         }
 
         let href = undefined;
-        switch (e.which) {
-            case 37: // left
+        switch (e.key) {
+            case "ArrowLeft": // left
                 href = $("a[accesskey=\"p\"]").attr("href");
                 if (! href) {
                     href = $("link[rel=\"prev\"]").attr("href");
                 }
                 // $("link[accesskey=\"p\"]").attr("href");
                 break;
-            case 39: // right
+            case "ArrowRight": // right
                 href = $("a[accesskey=\"n\"]").attr("href");
                 if (! href) {
                     href = $("link[rel=\"next\"]").attr("href");
                 }
                 // $("link[accesskey=\"n\"]").attr("href");
                 break;
+            case "v":
+            case "V":
+                window.open('http://validator.w3.org/check?uri='+encodeURIComponent(window.location));
+                return;
             default:
                 return;
         }
