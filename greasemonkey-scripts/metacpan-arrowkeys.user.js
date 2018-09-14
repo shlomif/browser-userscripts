@@ -24,15 +24,23 @@ function letsJQuery() {
         if (e.ctrlKey || e.altKey || e.metaKey) {
             return;
         }
+        const curr_el = () => results.eq(curr_sel);
         const update_selection = (cb) => {
-                if (orig_css) {
-                results.eq(curr_sel).css("background-color", orig_css);
-                }
-                cb();
-                const el = results.eq(curr_sel);
-                orig_css = el.css("background-color");
-                el.css("background-color", "ivory");
-                href = [undefined];
+            if (orig_css) {
+                curr_el().css("background-color", orig_css);
+            }
+            cb();
+            if (curr_sel < 0) {
+                curr_sel = 0;
+            } else if (curr_sel >= results.length) {
+                curr_sel = results.length - 1;
+            }
+            const el = curr_el();
+            orig_css = el.css("background-color");
+            el.css("background-color", "ivory");
+            href = [undefined];
+
+            return;
         };
 
         let href = undefined;
@@ -48,7 +56,7 @@ function letsJQuery() {
             });
                 break;
             case "Enter":
-                href = [1, results.eq(curr_sel).find("a").first().attr("href")];
+                href = [1, curr_el().find("a").first().attr("href")];
                 break;
             default:
                 return;
