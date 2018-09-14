@@ -38,6 +38,7 @@ function letsJQuery() {
             const el = curr_el();
             orig_css = el.css("background-color");
             el.css("background-color", "ivory");
+            window.scrollTo( el.offset().left , el.offset().top );
             href = [undefined];
 
             return;
