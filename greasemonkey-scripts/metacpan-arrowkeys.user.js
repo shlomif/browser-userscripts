@@ -24,21 +24,28 @@ function letsJQuery() {
         if (e.ctrlKey || e.altKey || e.metaKey) {
             return;
         }
-
-        let href = undefined;
-        switch (e.key) {
-            case "ArrowDown":
+        const update_selection = (cb) => {
                 if (orig_css) {
                 results.eq(curr_sel).css("background-color", orig_css);
                 }
-                curr_sel = (curr_sel === undefined) ? 0 : (curr_sel + 1);
+                cb();
                 const el = results.eq(curr_sel);
                 orig_css = el.css("background-color");
                 el.css("background-color", "ivory");
                 href = [undefined];
+        };
+
+        let href = undefined;
+        switch (e.key) {
+            case "ArrowDown":
+            update_selection(() => {
+                curr_sel = (curr_sel === undefined) ? 0 : (curr_sel + 1);
+            });
                 break;
             case "ArrowUp":
-                href = [undefined];
+            update_selection(() => {
+                curr_sel = (curr_sel === undefined) ? ( results.length - 1 ): (curr_sel - 1);
+            });
                 break;
             case "Enter":
                 href = [1, results.eq(curr_sel).find("a").first().attr("href")];
