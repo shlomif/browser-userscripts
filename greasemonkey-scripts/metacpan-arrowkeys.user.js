@@ -17,6 +17,7 @@ letsJQuery();
 
 // All your GM code must be inside this function
 function letsJQuery() {
+    let curr_sel = undefined;
     $(document).keydown(function(e) {
         if (e.ctrlKey || e.altKey || e.metaKey) {
             return;
@@ -26,11 +27,16 @@ function letsJQuery() {
         switch (e.key) {
             case "ArrowDown":
                 alert("down pressed.");
-                href = 1;
+                curr_sel = $(".module-result").first();
+                curr_sel.css("border", "green solid 1pt");
+                href = [undefined];
                 break;
             case "ArrowUp":
                 alert("up pressed.");
-                href = 1;
+                href = [undefined];
+                break;
+            case "Enter":
+                href = [1, curr_sel.find("a").first().attr("href")];
                 break;
             default:
                 return;
@@ -38,7 +44,9 @@ function letsJQuery() {
         if (! href) {
             return;
         }
-        // window.location = href;
+        if (href[0]) {
+            window.location = href[1];
+        }
         e.preventDefault();
     }
     );
