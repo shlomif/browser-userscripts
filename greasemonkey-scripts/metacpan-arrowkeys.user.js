@@ -18,6 +18,7 @@ letsJQuery();
 // All your GM code must be inside this function
 function letsJQuery() {
     let curr_sel = undefined;
+    let orig_css = undefined;
     let results = $(".module-result");
     $(document).keydown(function(e) {
         if (e.ctrlKey || e.altKey || e.metaKey) {
@@ -27,13 +28,16 @@ function letsJQuery() {
         let href = undefined;
         switch (e.key) {
             case "ArrowDown":
-                alert("down pressed.");
+                if (orig_css) {
+                results.eq(curr_sel).css("background-color", orig_css);
+                }
                 curr_sel = (curr_sel === undefined) ? 0 : (curr_sel + 1);
-                results.eq(curr_sel).css("background-color", "ivory");
+                const el = results.eq(curr_sel);
+                orig_css = el.css("background-color");
+                el.css("background-color", "ivory");
                 href = [undefined];
                 break;
             case "ArrowUp":
-                alert("up pressed.");
                 href = [undefined];
                 break;
             case "Enter":
