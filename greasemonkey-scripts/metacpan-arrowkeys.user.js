@@ -19,6 +19,7 @@ letsJQuery();
 function letsJQuery() {
     let curr_sel = undefined;
     let orig_css = undefined;
+    let highlight_color = 'PaleGreen';
     let results = $(".module-result");
     $(document).keydown(function(e) {
         if (e.ctrlKey || e.altKey || e.metaKey) {
@@ -37,7 +38,7 @@ function letsJQuery() {
             }
             const el = curr_el();
             orig_css = el.css("background-color");
-            el.css("background-color", "ivory");
+            el.css("background-color", highlight_color);
             window.scrollTo( el.offset().left , el.offset().top );
             href = [undefined];
 
