@@ -58,7 +58,9 @@ function letsJQuery() {
             });
                 break;
             case "Enter":
-                href = [1, curr_el().find("a").first().attr("href")];
+                if (curr_sel !== undefined) {
+                    href = [1, curr_el().find("a").first().attr("href")];
+                }
                 break;
             default:
                 return;
