@@ -39,7 +39,7 @@ function letsJQuery() {
             const el = curr_el();
             orig_css = el.css("background-color");
             el.css("background-color", highlight_color);
-            window.scrollTo( el.offset().left , el.offset().top );
+            window.scrollTo( el.offset().left , el.offset().top - el.innerHeight()/2 - window.innerHeight/2 );
             href = [undefined];
 
             return;
