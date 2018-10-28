@@ -5,6 +5,7 @@
 // @author       Shlomi Fish ( http://www.shlomifish.org/ )
 // @include      https://*.shlomifish.org/*
 // @include      https://perl-begin.org/*
+// @include      https://*.begin-site.org/*
 // @require https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
 // ==/UserScript==
 // ===============================================================
