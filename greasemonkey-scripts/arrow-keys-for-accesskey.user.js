@@ -3,7 +3,7 @@
 // @version      0.0.1
 // @description  provide self links for headers (h1, h2, etc.) with id=""'s.
 // @author       Shlomi Fish ( http://www.shlomifish.org/ )
-// @include      https://www.shlomifish.org/*
+// @include      https://*.shlomifish.org/*
 // @include      http://localhost/shlomif/homepage-local/*
 // @require https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
 // ==/UserScript==
