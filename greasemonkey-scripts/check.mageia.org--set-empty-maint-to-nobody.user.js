@@ -18,8 +18,8 @@ letsJQuery();
 // All your GM code must be inside this function
 function letsJQuery() {
     $('tr').each(function (idx) {
-        const td = $(this).find('td')[2];
-        if (td.text().length === 0) {
+        const td = $(this).find('td:eq(2)');
+        if (td && (td.text().length === 0)) {
             td.text('nobody');
         }
     });
