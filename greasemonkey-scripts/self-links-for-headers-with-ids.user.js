@@ -18,8 +18,34 @@ letsJQuery();
 
 function add_self_links() {
     var myclass = "self_link";
-    if (! $("body").hasClass(myclass)) {
-        $("h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]").each(function(i){ $(this).append( ' <span class="selfl">[<a href="#' + this.id + '">link</a>]</span>' ) })
+    function myappend(obj, myid) {
+        obj.append(
+            ' <span class="selfl">[<a href="#' + myid + '">link</a>]</span>',
+        );
+        return;
+    }
+    if (!$("body").hasClass(myclass)) {
+        for (var i = 6; i >= 1; --i) {
+            var h = "h" + i.toString();
+            function mytag(tag_name) {
+                return tag_name + "[id] > " + h + ":first-child";
+            }
+            $(
+                mytag("div") +
+                    " , " +
+                    mytag("section") +
+                    " , " +
+                    mytag("article"),
+            ).each(function (idx) {
+                if (this.id) {
+                    return;
+                }
+                myappend($(this), $(this).parent().attr("id"));
+            });
+        }
+        $("h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]").each(function (i) {
+            myappend($(this), this.id);
+        });
         $("body").addClass(myclass);
     }
 }
