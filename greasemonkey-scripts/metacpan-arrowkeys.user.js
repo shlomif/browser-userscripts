@@ -1,16 +1,18 @@
 // ==UserScript==
 // @name         metacpan-arrowkeys
-// @version      0.0.1
+// @version      0.0.2
 // @description  enables up and down arrows for moving between entries similar to duckduckgo.
 // @author       Shlomi Fish ( http://www.shlomifish.org/ )
 // @include      https://metacpan.org/*
-// @require https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
+// @require https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
 // ==/UserScript==
 // ===============================================================
 
 //
-// License is X11 License:
-// http://www.opensource.org/licenses/mit-license.php
+// License is the MIT / Expat License:
+// * http://www.opensource.org/licenses/mit-license.php
+// * https://www.gnu.org/licenses/license-list.html#Expat
+// SPDX-License-Identifier: MIT
 
 // Add jQuery
 letsJQuery();
@@ -20,6 +22,14 @@ function letsJQuery() {
     let curr_sel = undefined;
     let orig_css = undefined;
     let highlight_color = 'PaleGreen';
+    // Avoid setting .keydown() several times which causes several selections
+    // Using the unsafeWindow trick from:
+    // https://stackoverflow.com/questions/3321978/greasemonkey-global-variables
+    // Thanks!
+    if (unsafeWindow.metacpanArrowKeysScriptWasLoaded) {
+        return;
+    }
+    unsafeWindow.metacpanArrowKeysScriptWasLoaded = true;
     let results = $(".module-result");
     $(document).keydown(function(e) {
         if (e.ctrlKey || e.altKey || e.metaKey) {
