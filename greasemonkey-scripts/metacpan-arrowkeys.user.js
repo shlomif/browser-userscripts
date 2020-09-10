@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         metacpan-arrowkeys
-// @version      0.0.2
+// @version      0.0.3
 // @description  enables up and down arrows for moving between entries similar to duckduckgo.
 // @author       Shlomi Fish ( http://www.shlomifish.org/ )
 // @include      https://metacpan.org/*
@@ -14,7 +14,16 @@
 // * https://www.gnu.org/licenses/license-list.html#Expat
 // SPDX-License-Identifier: MIT
 
-// Add jQuery
+//
+// This script is available here:
+//
+// * https://www.shlomifish.org/Files/files/code/metacpan-arrowkeys.user.js
+//
+// * https://github.com/shlomif/browser-userscripts
+//
+
+// used to ascertain that jQuery was added. No longer needed due to the
+// @require, but kept for a future need.
 letsJQuery();
 
 // All your GM code must be inside this function
