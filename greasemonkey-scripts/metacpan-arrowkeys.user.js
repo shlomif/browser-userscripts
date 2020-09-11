@@ -45,6 +45,8 @@ function letsJQuery() {
             return;
         }
         const curr_el = () => results.eq(curr_sel);
+        let new_location = undefined;
+        let href_state = "no_recognized_key";
         const update_selection = (cb) => {
             if (orig_css) {
                 curr_el().css("background-color", orig_css);
@@ -59,12 +61,11 @@ function letsJQuery() {
             orig_css = el.css("background-color");
             el.css("background-color", highlight_color);
             window.scrollTo( el.offset().left , el.offset().top - el.innerHeight()/2 - window.innerHeight/2 );
-            href = [undefined];
+            href_state = "location_didnt_change";
 
             return;
         };
 
-        let href = undefined;
         switch (e.key) {
             case "ArrowDown":
             update_selection(() => {
@@ -78,17 +79,18 @@ function letsJQuery() {
                 break;
             case "Enter":
                 if (curr_sel !== undefined) {
-                    href = [1, curr_el().find("a").first().attr("href")];
+                    href_state = "location_was_changed";
+                    new_location = curr_el().find("a").first().attr("href");
                 }
                 break;
             default:
                 return;
         }
-        if (! href) {
+        if (href_state === "no_recognized_key") {
             return;
         }
-        if (href[0]) {
-            window.location = href[1];
+        if (href_state === "location_was_changed") {
+            window.location = new_location;
         }
         e.preventDefault();
     }
