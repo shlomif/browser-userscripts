@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         metacpan-arrowkeys
-// @version      0.0.3
+// @version      0.0.4
 // @description  enables up and down arrows for moving between entries similar to duckduckgo.
 // @author       Shlomi Fish ( http://www.shlomifish.org/ )
 // @include      https://metacpan.org/*
