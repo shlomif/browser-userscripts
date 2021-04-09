@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         self-links-for-headers-with-ids
-// @version      0.0.2
+// @version      0.0.3
 // @description  provide self links for headers (h1, h2, etc.) with id=""'s.
 // @author       Shlomi Fish ( http://www.shlomifish.org/ )
 // @include      *
@@ -19,8 +19,9 @@ letsJQuery();
 function add_self_links() {
     var myclass = "self_link";
     function myappend(obj, myid) {
+        var id_with_hash = "#" + myid;
         obj.append(
-            ' <span class="selfl">[<a href="#' + myid + '">link</a>]</span>',
+            ' <a href="' + id_with_hash + '">[ ' + id_with_hash + ' ]</a>',
         );
         return;
     }
