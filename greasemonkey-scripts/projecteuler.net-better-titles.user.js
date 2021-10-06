@@ -1,15 +1,22 @@
 // ==UserScript==
 // @name         projecteuler.net-better-titles
-// @version      0.0.1
-// @description  problem titles for Project Euler
+// @version      0.0.2
+// @description  [No longer needed] problem titles for Project Euler
 // @author       Shlomi Fish ( http://www.shlomifish.org/ )
 // @include      https://projecteuler.net/problem=*
 // @require https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
 // ==/UserScript==
 // ===============================================================
 
+// WARNING!
+// The effect of this script was incorporated into projecteuler.net
+// in a server-side way, so using it is no longer necessary:
 //
-// License is X11 License:
+// https://projecteuler.chat/viewtopic.php?f=5&t=7035
+//
+// It is kept here for historical reasons.
+//
+// License is Expat License:
 // http://www.opensource.org/licenses/mit-license.php
 
 // Add jQuery
