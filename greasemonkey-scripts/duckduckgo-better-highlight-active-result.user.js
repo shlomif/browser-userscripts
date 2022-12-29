@@ -15,4 +15,5 @@
 (function() {
     'use strict';
     document.styleSheets[0].insertRule(".result.highlight { border-color: red !important;}", 0);
+    document.styleSheets[0].insertRule("article { border-color: red !important;}", 0);
 })();

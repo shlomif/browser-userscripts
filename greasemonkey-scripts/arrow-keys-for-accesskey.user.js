@@ -23,21 +23,21 @@ function letsJQuery() {
         if (e.ctrlKey || e.altKey || e.metaKey) {
             return;
         }
-
+        const calc = (rel, key) => {
+            let href = $("link[rel=\"" + rel + "\"]").attr("href");
+            if (! href) {
+                href = $("a[accesskey=\"" + key + "\"]").attr("href");
+            }
+            return href;
+        };
         let href = undefined;
         switch (e.key) {
             case "ArrowLeft": // left
-                href = $("a[accesskey=\"p\"]").attr("href");
-                if (! href) {
-                    href = $("link[rel=\"prev\"]").attr("href");
-                }
+                href = calc('prev', 'p');
                 // $("link[accesskey=\"p\"]").attr("href");
                 break;
             case "ArrowRight": // right
-                href = $("a[accesskey=\"n\"]").attr("href");
-                if (! href) {
-                    href = $("link[rel=\"next\"]").attr("href");
-                }
+                href = calc('next', 'n');
                 // $("link[accesskey=\"n\"]").attr("href");
                 break;
             default:
