@@ -3,9 +3,10 @@
 // @version      0.0.1
 // @description  provide self links for headers (h1, h2, etc.) with id=""'s.
 // @author       Shlomi Fish ( http://www.shlomifish.org/ )
-// @include      https://*.shlomifish.org/*
 // @include      http://localhost/shlomif/homepage-local/*
+// @include      http://localhost:2400/*
 // @include      https://*.begin-site.org/*
+// @include      https://*.shlomifish.org/*
 // @require https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
 // ==/UserScript==
 // ===============================================================
@@ -24,9 +25,9 @@ function letsJQuery() {
             return;
         }
         const calc = (rel, key) => {
-            let href = $("link[rel=\"" + rel + "\"]").attr("href");
+            let href = $("link[rel=\"" + rel + "\"]").attr("href");
             if (! href) {
-                href = $("a[accesskey=\"" + key + "\"]").attr("href");
+                href = $("a[accesskey=\"" + key + "\"]").attr("href");
             }
             return href;
         };
