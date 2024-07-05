@@ -1,13 +1,14 @@
 // ==UserScript==
 // @name         arrow-keys-for-accesskeys
-// @version      0.0.1
-// @description  provide self links for headers (h1, h2, etc.) with id=""'s.
+// @version      0.0.2
+// @description  Use left-arrow / right-arrow for following "next"/"prev" links
 // @author       Shlomi Fish ( http://www.shlomifish.org/ )
 // @include      http://localhost/shlomif/homepage-local/*
 // @include      http://localhost:2400/*
 // @include      https://*.begin-site.org/*
+// @include      https://perl-begin.org/*
 // @include      https://*.shlomifish.org/*
-// @require https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
+// @require https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js
 // ==/UserScript==
 // ===============================================================
 
