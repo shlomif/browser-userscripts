@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         self-links-for-headers-with-ids
-// @version      0.0.3
+// @version      0.0.4
 // @description  provide self links for headers (h1, h2, etc.) with id=""'s.
 // @author       Shlomi Fish ( http://www.shlomifish.org/ )
 // @include      *
@@ -17,18 +17,18 @@
 letsJQuery();
 
 function add_self_links() {
-    var myclass = "self_link";
-    var myelemclass = "self_link_a_id";
+    const myclass = "self_link";
+    const myelemclass = "self_link_a_id";
     function myappend(obj, myid) {
-        var id_with_hash = "#" + myid;
+        const id_with_hash = "#" + myid;
         obj.append(
             ' <a class="' + myelemclass + '" href="' + id_with_hash + '">[ ' + id_with_hash + ' ]</a>',
         );
         return;
     }
     if (!$("body").hasClass(myclass)) {
-        for (var i = 6; i >= 1; --i) {
-            var h = "h" + i.toString();
+        for (let i = 6; i >= 1; --i) {
+            const h = "h" + i.toString();
             function mytag(tag_name) {
                 return tag_name + "[id] > " + h + ":first-child";
             }
@@ -39,14 +39,16 @@ function add_self_links() {
                     " , " +
                     mytag("article"),
             ).each(function (idx) {
-                if (this.id) {
+                const that = this;
+                if (that.id) {
                     return;
                 }
-                myappend($(this), $(this).parent().attr("id"));
+                myappend($(that), $(that).parent().attr("id"));
             });
         }
         $("h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]").each(function (i) {
-            myappend($(this), this.id);
+            const that = this;
+            myappend($(that), that.id);
         });
         $("a." + myelemclass).css("word-break", "break-all");
         $("body").addClass(myclass);
