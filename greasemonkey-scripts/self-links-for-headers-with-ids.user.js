@@ -18,10 +18,11 @@ letsJQuery();
 
 function add_self_links() {
     var myclass = "self_link";
+    var myelemclass = "self_link_a_id";
     function myappend(obj, myid) {
         var id_with_hash = "#" + myid;
         obj.append(
-            ' <a href="' + id_with_hash + '">[ ' + id_with_hash + ' ]</a>',
+            ' <a class="' + myelemclass + '" href="' + id_with_hash + '">[ ' + id_with_hash + ' ]</a>',
         );
         return;
     }
@@ -47,6 +48,7 @@ function add_self_links() {
         $("h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]").each(function (i) {
             myappend($(this), this.id);
         });
+        $("a." + myelemclass).css("word-break", "break-all");
         $("body").addClass(myclass);
     }
 }
