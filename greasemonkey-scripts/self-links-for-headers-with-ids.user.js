@@ -16,11 +16,24 @@
 // $ = unsafeWindow.jQuery;
 letsJQuery();
 
+const entityMap = {
+    '"': "&quot;",
+    "&": "&amp;",
+    "'": "&#39;",
+    "/": "&#x2F;",
+    "<": "&lt;",
+    ">": "&gt;",
+};
+
+function escapeHtml(str) {
+    return String(str).replace(/[&<>"'\/]/g, (s) => entityMap[s]);
+}
+
 function add_self_links() {
     const myclass = "self_link";
     const myelemclass = "self_link_a_id";
     function myappend(obj, myid) {
-        const id_with_hash = "#" + myid;
+        const id_with_hash = "#" + escapeHtml(myid);
         obj.append(
             ' <a class="' + myelemclass + '" href="' + id_with_hash + '">[ ' + id_with_hash + ' ]</a>',
         );
