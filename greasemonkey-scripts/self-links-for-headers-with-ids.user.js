@@ -4,7 +4,7 @@
 // @description  provide self links for headers (h1, h2, etc.) with id=""'s.
 // @author       Shlomi Fish ( http://www.shlomifish.org/ )
 // @include      *
-// @require https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
+// @require https://code.jquery.com/jquery-4.0.0.min.js
 // ==/UserScript==
 // ===============================================================
 
@@ -72,3 +72,5 @@ function add_self_links() {
 function letsJQuery() {
     add_self_links();
 }
+
+// [[[ require https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js ]]]
