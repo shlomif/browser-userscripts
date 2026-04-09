@@ -8,7 +8,7 @@
 // @include      https://*.begin-site.org/*
 // @include      https://perl-begin.org/*
 // @include      https://*.shlomifish.org/*
-// @require https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js
+// @require https://code.jquery.com/jquery-4.0.0.min.js
 // ==/UserScript==
 // ===============================================================
 

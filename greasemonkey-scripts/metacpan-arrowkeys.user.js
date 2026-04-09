@@ -4,7 +4,7 @@
 // @description  enables up and down arrows for moving between entries similar to duckduckgo.
 // @author       Shlomi Fish ( http://www.shlomifish.org/ )
 // @include      https://metacpan.org/*
-// @require https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+// @require https://code.jquery.com/jquery-4.0.0.min.js
 // ==/UserScript==
 // ===============================================================
 

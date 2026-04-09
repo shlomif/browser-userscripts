@@ -4,7 +4,7 @@
 // @description  NOT WORKING!!! yahoogroups search box fix
 // @author       Shlomi Fish ( http://www.shlomifish.org/ )
 // @include      https://groups.yahoo.com/neo/*
-// @require https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
+// @require https://code.jquery.com/jquery-4.0.0.min.js
 // ==/UserScript==
 // ===============================================================
 

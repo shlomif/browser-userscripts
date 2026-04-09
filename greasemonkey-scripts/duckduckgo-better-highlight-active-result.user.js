@@ -7,7 +7,6 @@
 // ==/UserScript==
 // ===============================================================
 
-// //require https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
 //
 // License is Expat License:
 // http://www.opensource.org/licenses/mit-license.php
